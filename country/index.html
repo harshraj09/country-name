@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Capitals</title>
+  <style>
+    body{
+        background-color: lightgrey;
+    }
+    #heading {
+        font-style: italic;
+        color: lavenderblush;
+    }
+    #capital {
+      color: rgba(0, 255, 247, 0.874);
+      opacity: 0.3;
+      font-size: 40px;
+      font-weight: bolder;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="heading">Select from the below to see the capital of the country :</h1>
+  <select id="country">
+    <option value="">Select a country</option>
+    <option value="India">India</option>
+    <option value="CHINA">China</option>
+    <option value="BRAZIL">Canada</option>
+    <option value="Australia">Australia</option>
+    <option value="FRANCE">France</option>
+  </select>
+  <p id="capital"></p>
+  <script>
+    const countrySelect = document.getElementById('country');
+    const capitalParagraph = document.getElementById('capital');
+
+    countrySelect.addEventListener('change', () => {
+      const selectedCountry = countrySelect.value;
+      let capital;
+
+      switch (selectedCountry) {
+        case 'India':
+          capital = 'New Delhi';
+          break;
+        case 'CHINA':
+          capital = 'Bejing';
+          break;
+        case 'BRAZIL':
+          capital = 'Rio De Janerio';
+          break;
+        case 'Australia':
+          capital = 'Canberra';
+          break;
+        case 'FRANCE':
+          capital = 'Paris';
+          break;
+        default:
+          capital = '';
+      }
+
+      capitalParagraph.textContent = capital;
+    });
+  </script>
+</body>
+</html>
